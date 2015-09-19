@@ -29,6 +29,19 @@ function get_the_ID() {
 	return ! empty( $post ) ? $post->ID : false;
 }
 
+function the_head_image( $filename = ''){
+	$post = get_post();
+	$head_image =  $post->head_image;
+	if(empty($head_image) || strlen($head_image)==0){
+		if(!empty($filename)){
+			$head_image = get_template_directory_uri()."/images/" + $filename;
+		}else{
+			$head_image = get_template_directory_uri()."/images/nothumb.png";
+		}
+	}
+	return $head_image;
+}
+
 /**
  * Display or retrieve the current post title with optional content.
  *

@@ -106,29 +106,20 @@
 						<?php if($i == 1){ ?> 
 							<div class="firstpost excerpt">
 								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="nofollow" id="first-thumbnail">
-									<?php if ( has_post_thumbnail() ) { ?> 
-										<?php the_post_thumbnail('bigthumb',array('title' => '')); ?>
-									<?php } else { ?>
-										<div class="featured-thumbnail">
-											<img src="<?php echo get_template_directory_uri(); ?>/images/bigthumb.png" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
-										</div>
-									<?php } ?>
+									<div class="featured-thumbnail">
+										<img src="<?php echo the_head_image("bigthumb.png"); ?>" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
+									</div>
 									<p class="featured-excerpt">
 										<span class="featured-title"><?php the_title(); ?></span>
-										<span class="f-excerpt"><?php echo mts_excerpt(10);?></span>
 									</p>
 								</a>
 							</div><!--.post excerpt-->
 						<?php } elseif($i == 2) { ?>
 							<div class="secondpost excerpt">
 								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="nofollow" id="second-thumbnail">
-									<?php if ( has_post_thumbnail() ) { ?> 
-										<?php the_post_thumbnail('mediumthumb',array('title' => '')); ?>
-									<?php } else { ?>
-										<div class="featured-thumbnail">
-											<img src="<?php echo get_template_directory_uri(); ?>/images/mediumthumb.png" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
-										</div>
-									<?php } ?>
+									<div class="featured-thumbnail">
+										<img src="<?php echo the_head_image("mediumthumb.png"); ?>" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
+									</div>
 									<p class="featured-excerpt">
 										<span class="featured-title"><?php the_title(); ?></span>
 									</p>
@@ -137,20 +128,18 @@
 						<?php } elseif($i == 3 || $i == 4) { ?>
 							<div class="thirdpost excerpt">
 								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="nofollow" id="third-thumbnail">
-									<?php if ( has_post_thumbnail() ) { ?> 
-										<?php the_post_thumbnail('smallthumb',array('title' => '')); ?>
-									<?php } else { ?>
+
 										<div class="featured-thumbnail">
-											<img src="<?php echo get_template_directory_uri(); ?>/images/smallfthumb.png" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
+											<img src="<?php echo the_head_image("smallfthumb.png"); ?>" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
 										</div>
-									<?php } ?>
+
 									<p class="featured-excerpt">
 										<span class="featured-title"><?php the_title(); ?></span>
 									</p>
 								</a>
 							</div><!--.post excerpt-->
-						<?php } ?>                   
-					<?php $i++; endwhile; wp_reset_query(); ?> 
+						<?php } ?>
+					<?php $i++; endwhile; wp_reset_query(); ?>
 				</div>
 			<?php } ?>
 		<?php }} ?>

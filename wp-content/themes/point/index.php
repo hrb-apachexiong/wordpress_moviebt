@@ -3,25 +3,17 @@
 <div id="page" class="home-page">
 	<div class="content">
 		<div class="article">
-			<h3 class="frontTitle"><div class="latest"><?php _e('Latest','mythemeshop'); ?></div></h3>
+			<h3 class="frontTitle"><div class="latest">最新发布</div></h3>
 			<?php  $j=0; $i =0; if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<article class="<?php echo 'pexcerpt'.$i++?> post excerpt <?php echo (++$j % 2 == 0) ? 'last' : ''; ?>">
 					<?php if (empty($mts_options['mts_full_posts'])) : ?>
-						<?php if ( has_post_thumbnail() ) { ?>
-							<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="nofollow" id="featured-thumbnail">
-								<?php echo '<div class="featured-thumbnail">'; the_post_thumbnail('featured',array('title' => '')); echo '</div>'; ?>
-								<div class="featured-cat"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></div>
-								<?php if (function_exists('wp_review_show_total')) wp_review_show_total(true, 'latestPost-review-wrapper'); ?>
-							</a>
-						<?php } else { ?>
-							<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="nofollow" id="featured-thumbnail">
-								<div class="featured-thumbnail">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/nothumb.png" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
-								</div>
-								<div class="featured-cat"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></div>
-								<?php if (function_exists('wp_review_show_total')) wp_review_show_total(true, 'latestPost-review-wrapper'); ?>
-							</a>
-						<?php } ?>
+						<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="nofollow" id="featured-thumbnail">
+							<div class="featured-thumbnail">
+								<img src="<?php echo the_head_image()?>" class="attachment-featured wp-post-image" alt="<?php the_title(); ?>">
+							</div>
+							<div class="featured-cat"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></div>
+							<?php if (function_exists('wp_review_show_total')) wp_review_show_total(true, 'latestPost-review-wrapper'); ?>
+						</a>
 					<?php endif; ?>
 					<header>						
 						<h2 class="title">

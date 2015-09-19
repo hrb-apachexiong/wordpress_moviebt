@@ -643,6 +643,12 @@ final class WP_Post {
 	 */
 	public $filter;
 
+	//补充两个字段
+
+	public $download_url;
+	public $head_image;
+
+
 	/**
 	 * Retrieve WP_Post instance.
 	 *

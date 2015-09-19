@@ -20,7 +20,6 @@
 function has_post_thumbnail( $post_id = null ) {
 	return (bool) get_post_thumbnail_id( $post_id );
 }
-
 /**
  * Retrieve Post Thumbnail ID.
  *
