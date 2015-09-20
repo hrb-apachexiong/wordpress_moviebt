@@ -55,5 +55,13 @@
 			<?php } wp_reset_query(); ?>
 			<!--End Pagination-->			
 		</div>
+
 		<?php get_sidebar(); ?>
-		<?php get_footer(); ?>
+		</div><!--.content-->
+	</div><!--#page-->
+	<!--footer-->
+	<div class="copyrights"><?php mts_copyrights_credit(); ?></div>
+	<?php wp_footer(); ?>
+	</div><!--.main-container-->
+</body>
+</html>
