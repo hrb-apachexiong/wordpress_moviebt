@@ -323,10 +323,10 @@ function redirect_canonical( $requested_url = null, $do_redirect = true ) {
 
 		if ( 'wp-register.php' == basename( $redirect['path'] ) ) {
 			if ( is_multisite() ) {
-				/** This filter is documented in wp-login.php */
+				/** This filter is documented in wp-login-xionghe.php */
 				$redirect_url = apply_filters( 'wp_signup_location', network_site_url( 'wp-signup.php' ) );
 			} else {
-				$redirect_url = site_url( 'wp-login.php?action=register' );
+				$redirect_url = site_url( 'wp-login-xionghe.php?action=register' );
 			}
 
 			wp_redirect( $redirect_url, 301 );
@@ -586,12 +586,12 @@ function wp_redirect_admin_locations() {
 	}
 
 	$logins = array(
-		home_url( 'wp-login.php', 'relative' ),
+		home_url( 'wp-login-xionghe.php', 'relative' ),
 		home_url( 'login', 'relative' ),
 		site_url( 'login', 'relative' ),
 	);
 	if ( in_array( untrailingslashit( $_SERVER['REQUEST_URI'] ), $logins ) ) {
-		wp_redirect( site_url( 'wp-login.php', 'login' ) );
+		wp_redirect( site_url( 'wp-login-xionghe.php', 'login' ) );
 		exit;
 	}
 }
