@@ -895,7 +895,10 @@ footer .sbutton {
     line-height: 20px;
     max-width: 300px;
 }
-.sidebar.c-4-12 a { color: #2A2A2A }
+.sidebar.c-4-12 a {
+    color: #2A2A2A;
+    font-size:10px;
+}
 .widget {
     margin-bottom: 30px;
     float: left;
@@ -911,7 +914,7 @@ footer .sbutton {
 .widget li {
     list-style-type: square;
     margin-left: 17px;
-    margin-bottom: 7px;
+    margin-bottom: 0px;
 }
 .widget li:last-child {
     margin-bottom: 0;
